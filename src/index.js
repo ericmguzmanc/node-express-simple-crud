@@ -5,8 +5,8 @@ let bodyParser = require('body-parser');
 let dbconn = require('./db');
 
 // ℹ Routes import will be here
+let todoRoute = require('./routes/todo');
 
-// ---
 
 /**
  *  🤝🏻 Takes any incoming json string and 
@@ -21,9 +21,8 @@ app.use((req, res, next) => {
 });
 
 // 🧵 Routes
+app.use(todoRoute);
 
-
-// ---
 
 app.use(express.static('public'));
 
