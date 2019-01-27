@@ -1,11 +1,11 @@
-let express = require('express');
-let app = express();
-let path = require('path');
-let bodyParser = require('body-parser');
-let dbconn = require('./db');
+const express = require('express');
+const app = express();
+const path = require('path');
+const bodyParser = require('body-parser');
+const dbconn = require('./db');
 
 // ℹ Routes import will be here
-let todoRoute = require('./routes/todo');
+const todoRoute = require('./routes/todo');
 
 
 /**

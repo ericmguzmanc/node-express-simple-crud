@@ -1,6 +1,6 @@
-let TodoModel = require('../models/todo.model');
-let express = require('express');
-let router = express.Router();
+const TodoModel = require('../models/todo.model');
+const express = require('express');
+const router = express.Router();
 
 /**
  * ➕ Create a new ToDo
@@ -41,13 +41,11 @@ router.get('/todo', (req, res) => {
  * 👇🏻 UPDATE Request
  */
 router.put('/todo', (req, res) => {
-  if (!req.body.title) {
+  if (!req.body._id) {
     return res.status(400).send('Missing URL parameter: title');
   }
-  console.log(req.body.title)
-
   TodoModel.findOneAndUpdate({
-    title: req.body.title,
+    _id: req.body._id,
   }, req.body)
     .then(doc => {
       res.json(doc);
@@ -61,12 +59,12 @@ router.put('/todo', (req, res) => {
  * ⚠ DELETE Request
  */
 router.delete('/todo', (req, res) => {
-  if(!req.body.title) {
+  if(!req.body._id) {
     return res.status(400).send('Missing URL parameter: title');
   }
 
   TodoModel.findOneAndRemove({
-    title: req.body.title
+    _id: req.body._id
   })
     .then(doc => {
       res.json(doc)

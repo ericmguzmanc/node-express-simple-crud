@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "mongoose-auto-increment-reworked": "^1.2.1",
     "nodemon": "^1.18.9"
   },
   "dependencies": {

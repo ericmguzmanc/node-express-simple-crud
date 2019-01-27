@@ -1,4 +1,4 @@
-let mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
 const SERVER = 'ds131814.mlab.com:31814';
 const DATABASE = 'node-express-simple-crud';
@@ -8,7 +8,7 @@ const dbURI = `mongodb://${USER}:${PASSWORD}@${SERVER}/${DATABASE}`;
 /**
  *  🔋 Database connection
  */
-mongoose.connect(dbURI);
+mongoose.connect(dbURI, { useNewUrlParser: true });
 
 /**
  * 🏆 When successfully connected
